@@ -16,12 +16,7 @@
             {{ __('Dashboard') }}
           </x-nav-link>
         </div>
-        <!-- 🔽 一覧ページへのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('result.index')" :active="request()->routeIs('result.index')">
-            {{ __('実績表') }}
-          </x-nav-link>
-        </div>
+
         <!-- 🔽 作成ページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('result.create')" :active="request()->routeIs('result.create')">
@@ -31,7 +26,13 @@
         <!-- 🔽 マイページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('result.mypage')" :active="request()->routeIs('result.mypage')">
-            {{ __('マイページ') }}
+            {{ __('自社の実績') }}
+          </x-nav-link>
+        </div>
+        <!-- 🔽 検索画面へのリンクを追加 -->
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+          <x-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
+            {{ __('実績表') }}
           </x-nav-link>
         </div>
 
@@ -89,12 +90,6 @@
         {{ __('Dashboard') }}
       </x-responsive-nav-link>
     </div>
-    <!-- 🔽 一覧ページへのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('result.index')" :active="request()->routeIs('result.index')">
-        {{ __('実績') }}
-      </x-responsive-nav-link>
-    </div>
     <!-- 🔽 作成ページへのリンクを追加 -->
     <div class="pt-2 pb-3 space-y-1">
       <x-responsive-nav-link :href="route('result.create')" :active="request()->routeIs('result.create')">
@@ -104,7 +99,13 @@
     <!-- 🔽 マイページへのリンクを追加 -->
     <div class="pt-2 pb-3 space-y-1">
       <x-responsive-nav-link :href="route('result.mypage')" :active="request()->routeIs('result.mypage')">
-        {{ __('マイページ') }}
+        {{ __('自社の実績') }}
+      </x-responsive-nav-link>
+    </div>
+     <!-- 🔽 検索画面へのリンクを追加 -->
+    <div class="pt-2 pb-3 space-y-1">
+      <x-responsive-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
+        {{ __('実績表') }}
       </x-responsive-nav-link>
     </div>
     

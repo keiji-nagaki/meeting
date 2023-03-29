@@ -68,7 +68,7 @@ class ResultController extends Controller
     $result = Result::create($data);
 
     // tweet.index」にリクエスト送信（一覧ページに移動）
-    return redirect()->route('result.index');
+    return redirect()->route('dashboard');
   }
 
 
@@ -123,7 +123,7 @@ class ResultController extends Controller
           }
           //データ更新処理
           $result = Result::find($id)->update($request->all());
-          return redirect()->route('result.index');
+          return redirect()->route('dashboard');
     }
 
     /**
@@ -136,7 +136,7 @@ class ResultController extends Controller
     {
         //
         $result = Result::find($id)->delete();
-        return redirect()->route('result.index');
+        return redirect()->route('dashboard');
     }
     
      public function mydata()
