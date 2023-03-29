@@ -19,13 +19,13 @@
         <!-- 🔽 一覧ページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('result.index')" :active="request()->routeIs('result.index')">
-            {{ __('実績') }}
+            {{ __('実績表') }}
           </x-nav-link>
         </div>
         <!-- 🔽 作成ページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('result.create')" :active="request()->routeIs('result.create')">
-            {{ __('実績入力') }}
+            {{ __('実績の入力') }}
           </x-nav-link>
         </div>
         <!-- 🔽 マイページへのリンクを追加 -->
