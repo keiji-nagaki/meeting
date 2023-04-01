@@ -48,6 +48,6 @@ class User extends Authenticatable
   }
   public function userSchedules()
   {
-    return $this->hasMany(Tweet::class);
+    return $this->hasMany(Schedule::class);
   }
 }

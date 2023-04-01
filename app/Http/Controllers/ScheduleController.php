@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Models\Schedule;
 
+use Auth;
+
+use App\Models\User;
 
 class ScheduleController extends Controller
 {
@@ -60,7 +63,8 @@ class ScheduleController extends Controller
           }
           // create()は最初から用意されている関数
           // 戻り値は挿入されたレコードの情報
-          $result = Schedule::create($request->all());
+          $data = $request->merge(['user_id' => Auth::user()->id])->all();
+          $result = Schedule::create($data);
           // ルーティング「tweet.index」にリクエスト送信（一覧ページに移動）
           return redirect()->route('schedule.index');
   
@@ -86,7 +90,8 @@ class ScheduleController extends Controller
      */
     public function edit($id)
     {
-      
+       $schedule = Schedule::find($id);
+       return response()->view('schedule.edit', compact('schedule'));
     }
 
     /**
@@ -99,6 +104,26 @@ class ScheduleController extends Controller
     public function update(Request $request, $id)
     {
         //
+                //バリデーション
+          $validator = Validator::make($request->all(), [
+            'subject' => 'required',
+            'date' => 'required',
+            'schedule' => 'required',
+            'contact' => 'required',
+          ]);
+          //バリデーション:エラー
+          if ($validator->fails()) {
+            return redirect()
+              ->route('schedule.edit', $id)
+              ->withInput()
+              ->withErrors($validator);
+          }
+          //データ更新処理
+          $result = Schedule::find($id)->update($request->all());
+          return redirect()->route('schedule.index');
+          
+          
+          
 
     }
 
@@ -111,7 +136,20 @@ class ScheduleController extends Controller
     public function destroy($id)
     {
         //
+        $result = Schedule::find($id)->delete();
+        return redirect()->route('schedule.index');
       
     }
+    
+    public function mydata()
+  {
+    // Userモデルに定義したリレーションを使用してデータを取得する．
+    $schedules = User::query()
+      ->find(Auth::user()->id)
+      ->userSchedules()
+      ->orderBy('created_at','desc')
+      ->get();
+    return response()->view('schedule.index', compact('schedules'));
+  }
 
 }

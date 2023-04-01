@@ -17,7 +17,7 @@
               <tr>
                 <th class="py-4 px-6 bg-gray-lightest dark:bg-gray-darkest font-bold uppercase text-lg text-gray-dark dark:text-gray-200 border-b border-grey-light dark:border-grey-dark">予定表</th>
                  <tr class="hover:bg-gray-lighter">   
-
+                     <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">企業名</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">日付</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">件名</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">明日の予定</td>
@@ -28,7 +28,7 @@
               @foreach ($schedules as $schedule)
 
               　　　<tr class="hover:bg-gray-lighter">
->
+                     <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$schedule->user->name}}</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$schedule->date}}</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$schedule->subject}}</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$schedule->schedule}}</td>
@@ -36,7 +36,17 @@
                      <!-- 削除ボタン -->
                      <td>
                         <!-- 🔽 更新ボタン -->
-                   
+                    <form action="{{ route('schedule.edit',$schedule->id) }}" method="GET" class="text-left">
+                      @csrf
+                      <x-primary-button class="ml-3">
+                        <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="gray">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                        </svg>
+                      </x-primary-button>
+                    </form>
+                    </td>
+                     <td>
+                    <form action="{{ route('schedule.destroy',$schedule->id) }}" method="POST" class="text-left">
                       @method('delete')
                       @csrf
                       <x-primary-button class="ml-3">

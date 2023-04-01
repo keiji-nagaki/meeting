@@ -21,14 +21,17 @@ Route::middleware('auth')->group(function () {
 Route::get('/result/search/input', [SearchController::class, 'create'])->name('search.input');
   // 🔽 追加（検索処理）
 Route::get('/result/search/result', [SearchController::class, 'index'])->name('search.result');
- 
 Route::get('/result/mypage', [ResultController::class, 'mydata'])->name('result.mypage');
 Route::resource('result', ResultController::class);
 
+Route::get('/schedule/search/input', [SearchController::class, 'create'])->name('search.input');
+  // 🔽 追加（検索処理）
+Route::get('/schedule/search/result', [SearchController::class, 'index'])->name('search.result');
+Route::get('/schedule/mypage', [ScheduleController::class, 'mydata'])->name('schedule.mypage');
+Route::resource('schedule', ScheduleController::class);
 
 });
 
-Route::resource('schedule', ScheduleController::class);
 
 
 
