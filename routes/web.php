@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ScheduleSearchController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,9 +26,9 @@ Route::get('/result/search/result', [SearchController::class, 'index'])->name('s
 Route::get('/result/mypage', [ResultController::class, 'mydata'])->name('result.mypage');
 Route::resource('result', ResultController::class);
 
-Route::get('/schedule/search/input', [SearchController::class, 'create'])->name('search.input');
+Route::get('/schedule/schedulesearch/input', [ScheduleSearchController::class, 'create'])->name('schedulesearch.input');
   // 🔽 追加（検索処理）
-Route::get('/schedule/search/result', [SearchController::class, 'index'])->name('search.result');
+Route::get('/schedule/schedulesearch/result', [ScheduleSearchController::class, 'index'])->name('schedulesearch.result');
 Route::get('/schedule/mypage', [ScheduleController::class, 'mydata'])->name('schedule.mypage');
 Route::resource('schedule', ScheduleController::class);
 

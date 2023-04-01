@@ -54,6 +54,12 @@
             {{ __('Mypage') }}
           </x-nav-link>
         </div>
+        <!-- 🔽 検索画面へのリンクを追加 -->
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+          <x-nav-link :href="route('schedulesearch.input')" :active="request()->routeIs('schedulesearch.input')">
+            {{ __('Search') }}
+          </x-nav-link>
+        </div>
 
 
       </div>
@@ -145,6 +151,12 @@
     <div class="pt-2 pb-3 space-y-1">
       <x-responsive-nav-link :href="route('schedule.mypage')" :active="request()->routeIs('schedule.mypage')">
         {{ __('Mypage') }}
+      </x-responsive-nav-link>
+    </div>
+    <!-- 🔽 検索画面へのリンクを追加 -->
+    <div class="pt-2 pb-3 space-y-1">
+      <x-responsive-nav-link :href="route('schedulesearch.input')" :active="request()->routeIs('schedulesearch.input')">
+        {{ __('Search') }}
       </x-responsive-nav-link>
     </div>
 
