@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ResultController;
-
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +25,10 @@ Route::get('/result/search/result', [SearchController::class, 'index'])->name('s
 Route::get('/result/mypage', [ResultController::class, 'mydata'])->name('result.mypage');
 Route::resource('result', ResultController::class);
 
+
 });
+
+Route::resource('schedule', ScheduleController::class);
 
 
 

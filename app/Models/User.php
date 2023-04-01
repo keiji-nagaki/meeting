@@ -46,4 +46,8 @@ class User extends Authenticatable
   {
     return $this->hasMany(Result::class);
   }
+  public function userSchedules()
+  {
+    return $this->hasMany(Tweet::class);
+  }
 }
