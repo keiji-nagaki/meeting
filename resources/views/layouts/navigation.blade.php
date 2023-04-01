@@ -60,6 +60,25 @@
             {{ __('Search') }}
           </x-nav-link>
         </div>
+        
+         <!-- 🔽 GHOページへのリンクを追加 -->
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+          <x-nav-link :href="route('main_user.index')" :active="request()->routeIs('main_user.index')">
+            {{ __('Index') }}
+          </x-nav-link>
+        </div>
+        <!-- 🔽 作成ページへのリンクを追加 -->
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+          <x-nav-link :href="route('main_user.create')" :active="request()->routeIs('main_user.create')">
+            {{ __('Create') }}
+          </x-nav-link>
+        </div>
+        <!-- 🔽 検索画面へのリンクを追加 -->
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+          <x-nav-link :href="route('main_usersearch.input')" :active="request()->routeIs('main_usersearch.input')">
+            {{ __('Search') }}
+          </x-nav-link>
+        </div>
 
 
       </div>
@@ -159,6 +178,26 @@
         {{ __('Search') }}
       </x-responsive-nav-link>
     </div>
+    
+    <!-- 🔽 GHOページへのリンクを追加 -->
+    <div class="pt-2 pb-3 space-y-1">
+      <x-responsive-nav-link :href="route('main_user.index')" :active="request()->routeIs('main_user.index')">
+        {{ __('Index') }}
+      </x-responsive-nav-link>
+    </div>
+    <!-- 🔽 作成ページへのリンクを追加 -->
+    <div class="pt-2 pb-3 space-y-1">
+      <x-responsive-nav-link :href="route('main_user.create')" :active="request()->routeIs('main_user.create')">
+        {{ __('Create') }}
+      </x-responsive-nav-link>
+    </div>
+    <!-- 🔽 検索画面へのリンクを追加 -->
+    <div class="pt-2 pb-3 space-y-1">
+      <x-responsive-nav-link :href="route('main_usersearch.input')" :active="request()->routeIs('main_usersearch.input')">
+        {{ __('Search') }}
+      </x-responsive-nav-link>
+    </div>
+
 
     
 
