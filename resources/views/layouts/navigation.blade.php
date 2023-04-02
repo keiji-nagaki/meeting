@@ -74,8 +74,8 @@
           </x-nav-link>
         </div>
         <!-- 🔽 検索画面へのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('main_usersearch.input')" :active="request()->routeIs('main_usersearch.input')">
+       <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+          <x-nav-link :href="route('main_usersearch.input')" :active="request()->routeIs('main_userschedulesearch.input')">
             {{ __('Search') }}
           </x-nav-link>
         </div>

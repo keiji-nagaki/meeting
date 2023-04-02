@@ -127,5 +127,16 @@ class Main_userController extends Controller
       $result = Main_user::find($id)->delete();
       return redirect()->route('main_user.index');
     }
+    
+    public function mydata()
+  {
+    // Userモデルに定義したリレーションを使用してデータを取得する．
+    $main_users = Main_user::query()
+      ->find(Auth::user()->id)
+      ->userTweets()
+      ->orderBy('created_at','desc')
+      ->get();
+    return response()->view('main_user.index', compact('main_users'));
+  }
 
 }

@@ -15,7 +15,7 @@
           <form class="mb-6" action="{{ route('main_usersearch.result') }}" method="GET">
             @csrf
             <div class="flex flex-col mb-4">
-              <x-input-label for="keyword" :value="__('Keyword')" />
+              <x-input-label for="keyword" :value="__('日付を入力してください')" />
               <x-text-input id="keyword" class="block mt-1 w-full" type="date" name="keyword" :value="old('keyword')" autofocus />
             </div>
             <div class="flex items-center justify-end mt-4">

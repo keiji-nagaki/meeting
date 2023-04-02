@@ -15,7 +15,7 @@ class Main_userSearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
         $keyword = trim($request->keyword);

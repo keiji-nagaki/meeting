@@ -53,6 +53,6 @@ class User extends Authenticatable
   
   public function userMain_users()
   {
-    return $this->hasMany(main_user::class);
+    return $this->hasMany(Main_user::class);
   }
 }

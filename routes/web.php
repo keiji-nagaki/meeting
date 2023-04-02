@@ -35,9 +35,9 @@ Route::get('/schedule/mypage', [ScheduleController::class, 'mydata'])->name('sch
 Route::resource('schedule', ScheduleController::class);
 
 // 🔽 追加（検索画面）
-Route::get('/main_user/main_usersearch/input', [SearchController::class, 'create'])->name('main_usersearch.input');
+Route::get('/main_user/main_usersearch/input', [Main_usersearchController::class, 'create'])->name('main_usersearch.input');
   // 🔽 追加（検索処理）
-Route::get('/main_user/main_usersearch/result', [SearchController::class, 'index'])->name('main_usersearch.result');
+Route::get('/main_user/main_usersearch/result', [Main_usersearchController::class, 'index'])->name('main_usersearch.result');
 Route::get('/main_user/mypage', [Main_userController::class, 'mydata'])->name('main_user.mypage');
 Route::resource('main_user', Main_userController::class);
 });
