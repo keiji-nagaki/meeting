@@ -39,44 +39,57 @@
        <!-- 🔽 一覧ページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('schedule.index')" :active="request()->routeIs('schedule.index')">
-            {{ __('Index') }}
+            {{ __('予定表') }}
           </x-nav-link>
         </div>
         <!-- 🔽 作成ページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('schedule.create')" :active="request()->routeIs('schedule.create')">
-            {{ __('Create') }}
+            {{ __('予定の入力') }}
           </x-nav-link>
         </div>
         <!-- 🔽 マイページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('schedule.mypage')" :active="request()->routeIs('schedule.mypage')">
-            {{ __('Mypage') }}
+            {{ __('自社の予定') }}
           </x-nav-link>
         </div>
         <!-- 🔽 検索画面へのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('schedulesearch.input')" :active="request()->routeIs('schedulesearch.input')">
-            {{ __('Search') }}
+            {{ __('予定表') }}
           </x-nav-link>
         </div>
         
          <!-- 🔽 GHOページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('main_user.index')" :active="request()->routeIs('main_user.index')">
-            {{ __('Index') }}
+            {{ __('GHO専用連絡事項') }}
           </x-nav-link>
         </div>
         <!-- 🔽 作成ページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('main_user.create')" :active="request()->routeIs('main_user.create')">
-            {{ __('Create') }}
+            {{ __('GHO専用連絡事項の入力') }}
           </x-nav-link>
         </div>
         <!-- 🔽 検索画面へのリンクを追加 -->
        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('main_usersearch.input')" :active="request()->routeIs('main_userschedulesearch.input')">
-            {{ __('Search') }}
+            {{ __('連絡事項') }}
+          </x-nav-link>
+        </div>
+        
+        <!-- 🔽 資料ページへのリンクを追加 -->
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+          <x-nav-link :href="route('document.index')" :active="request()->routeIs('document.index')">
+            {{ __('入所関係資料') }}
+          </x-nav-link>
+        </div>
+        <!-- 🔽 作成ページへのリンクを追加 -->
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+          <x-nav-link :href="route('document.create')" :active="request()->routeIs('document.create')">
+            {{ __('GHO専用入所関係資料登録') }}
           </x-nav-link>
         </div>
 
@@ -195,6 +208,18 @@
     <div class="pt-2 pb-3 space-y-1">
       <x-responsive-nav-link :href="route('main_usersearch.input')" :active="request()->routeIs('main_usersearch.input')">
         {{ __('Search') }}
+      </x-responsive-nav-link>
+    </div>
+    <!-- 🔽 資料ページへのリンクを追加 -->
+    <div class="pt-2 pb-3 space-y-1">
+      <x-responsive-nav-link :href="route('document.index')" :active="request()->routeIs('document.index')">
+        {{ __('Index') }}
+      </x-responsive-nav-link>
+    </div>
+    <!-- 🔽 作成ページへのリンクを追加 -->
+    <div class="pt-2 pb-3 space-y-1">
+      <x-responsive-nav-link :href="route('document.create')" :active="request()->routeIs('document.create')">
+        {{ __('Create') }}
       </x-responsive-nav-link>
     </div>
 

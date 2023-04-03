@@ -9,6 +9,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ScheduleSearchController;
 use App\Http\Controllers\Main_userController;
 use App\Http\Controllers\Main_userSearchController;
+use App\Http\Controllers\DocumentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::get('/main_user/mypage', [Main_userController::class, 'mydata'])->name('m
 Route::resource('main_user', Main_userController::class);
 });
 
+Route::resource('document', DocumentController::class);
 
 
 
