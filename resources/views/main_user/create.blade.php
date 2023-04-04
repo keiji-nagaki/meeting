@@ -3,7 +3,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Create New Tweet') }}
+      {{ __('連絡事項の入力') }}
     </h2>
   </x-slot>
 
@@ -26,7 +26,7 @@
             </div>
             <div class="flex items-center justify-end mt-4">
               <x-primary-button class="ml-3">
-                {{ __('Create') }}
+                {{ __('登録') }}
               </x-primary-button>
             </div>
           </form>

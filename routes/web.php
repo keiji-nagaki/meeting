@@ -45,7 +45,13 @@ Route::resource('main_user', Main_userController::class);
 
 Route::resource('document', DocumentController::class);
 
+Route::get('/business_owner', function () {
+    return view('business_owner');
+});
 
+Route::get('/cooperating_company', function () {
+    return view('cooperating_company');
+});
 
 Route::get('/', function () {
     return view('welcome');

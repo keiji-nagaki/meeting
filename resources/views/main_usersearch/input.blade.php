@@ -3,7 +3,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Search Tweet') }}
+      {{ __('日付から連絡事項の確認') }}
     </h2>
   </x-slot>
 
@@ -20,7 +20,7 @@
             </div>
             <div class="flex items-center justify-end mt-4">
               <x-primary-button class="ml-3">
-                {{ __('Search') }}
+                {{ __('確認') }}
               </x-primary-button>
             </div>
           </form>

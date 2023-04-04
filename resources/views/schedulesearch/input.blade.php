@@ -3,7 +3,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Search Tweet') }}
+      {{ __('予定表') }}
     </h2>
   </x-slot>
 
@@ -15,12 +15,12 @@
           <form class="mb-6" action="{{ route('schedulesearch.result') }}" method="GET">
             @csrf
             <div class="flex flex-col mb-4">
-              <x-input-label for="keyword" :value="__('Keyword')" />
+              <x-input-label for="keyword" :value="__('日付を指定して下さい')" />
               <x-text-input id="keyword" class="block mt-1 w-full" type="date" name="keyword" :value="old('keyword')" autofocus />
             </div>
             <div class="flex items-center justify-end mt-4">
               <x-primary-button class="ml-3">
-                {{ __('Search') }}
+                {{ __('表示') }}
               </x-primary-button>
             </div>
           </form>

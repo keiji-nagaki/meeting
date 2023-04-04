@@ -3,82 +3,13 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
       <div class="flex">
-        <!-- Logo -->
-        <div class="shrink-0 flex items-center">
-          <a href="{{ route('dashboard') }}">
-            <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
-          </a>
-        </div>
-
         <!-- Navigation Links -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
           <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-            {{ __('Dashboard') }}
+            {{ __('メイン画面') }}
           </x-nav-link>
         </div>
 
-        <!-- 🔽 実績へのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('result.create')" :active="request()->routeIs('result.create')">
-            {{ __('実績の入力') }}
-          </x-nav-link>
-        </div>
-        <!-- 🔽 マイページへのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('result.mypage')" :active="request()->routeIs('result.mypage')">
-            {{ __('自社の実績') }}
-          </x-nav-link>
-        </div>
-        <!-- 🔽 検索画面へのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
-            {{ __('実績表') }}
-          </x-nav-link>
-        </div>
-        
-       <!-- 🔽 一覧ページへのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('schedule.index')" :active="request()->routeIs('schedule.index')">
-            {{ __('予定表') }}
-          </x-nav-link>
-        </div>
-        <!-- 🔽 作成ページへのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('schedule.create')" :active="request()->routeIs('schedule.create')">
-            {{ __('予定の入力') }}
-          </x-nav-link>
-        </div>
-        <!-- 🔽 マイページへのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('schedule.mypage')" :active="request()->routeIs('schedule.mypage')">
-            {{ __('自社の予定') }}
-          </x-nav-link>
-        </div>
-        <!-- 🔽 検索画面へのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('schedulesearch.input')" :active="request()->routeIs('schedulesearch.input')">
-            {{ __('予定表') }}
-          </x-nav-link>
-        </div>
-        
-         <!-- 🔽 GHOページへのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('main_user.index')" :active="request()->routeIs('main_user.index')">
-            {{ __('GHO専用連絡事項') }}
-          </x-nav-link>
-        </div>
-        <!-- 🔽 作成ページへのリンクを追加 -->
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('main_user.create')" :active="request()->routeIs('main_user.create')">
-            {{ __('GHO専用連絡事項の入力') }}
-          </x-nav-link>
-        </div>
-        <!-- 🔽 検索画面へのリンクを追加 -->
-       <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          <x-nav-link :href="route('main_usersearch.input')" :active="request()->routeIs('main_userschedulesearch.input')">
-            {{ __('連絡事項') }}
-          </x-nav-link>
-        </div>
         
         <!-- 🔽 資料ページへのリンクを追加 -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -148,68 +79,7 @@
         {{ __('Dashboard') }}
       </x-responsive-nav-link>
     </div>
-    <!-- 🔽 作成ページへのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('result.create')" :active="request()->routeIs('result.create')">
-        {{ __('実績入力') }}
-      </x-responsive-nav-link>
-    </div>
-    <!-- 🔽 マイページへのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('result.mypage')" :active="request()->routeIs('result.mypage')">
-        {{ __('自社の実績') }}
-      </x-responsive-nav-link>
-    </div>
-     <!-- 🔽 検索画面へのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('search.input')" :active="request()->routeIs('search.input')">
-        {{ __('実績表') }}
-      </x-responsive-nav-link>
-    </div>
-    
-      <!-- 🔽 一覧ページへのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('schedule.index')" :active="request()->routeIs('schedule.index')">
-        {{ __('Index') }}
-      </x-responsive-nav-link>
-    </div>
-    <!-- 🔽 作成ページへのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('schedule.create')" :active="request()->routeIs('schedule.create')">
-        {{ __('Create') }}
-      </x-responsive-nav-link>
-    </div>
-    <!-- 🔽 マイページへのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('schedule.mypage')" :active="request()->routeIs('schedule.mypage')">
-        {{ __('Mypage') }}
-      </x-responsive-nav-link>
-    </div>
-    <!-- 🔽 検索画面へのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('schedulesearch.input')" :active="request()->routeIs('schedulesearch.input')">
-        {{ __('Search') }}
-      </x-responsive-nav-link>
-    </div>
-    
-    <!-- 🔽 GHOページへのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('main_user.index')" :active="request()->routeIs('main_user.index')">
-        {{ __('Index') }}
-      </x-responsive-nav-link>
-    </div>
-    <!-- 🔽 作成ページへのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('main_user.create')" :active="request()->routeIs('main_user.create')">
-        {{ __('Create') }}
-      </x-responsive-nav-link>
-    </div>
-    <!-- 🔽 検索画面へのリンクを追加 -->
-    <div class="pt-2 pb-3 space-y-1">
-      <x-responsive-nav-link :href="route('main_usersearch.input')" :active="request()->routeIs('main_usersearch.input')">
-        {{ __('Search') }}
-      </x-responsive-nav-link>
-    </div>
+  
     <!-- 🔽 資料ページへのリンクを追加 -->
     <div class="pt-2 pb-3 space-y-1">
       <x-responsive-nav-link :href="route('document.index')" :active="request()->routeIs('document.index')">
