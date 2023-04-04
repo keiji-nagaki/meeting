@@ -10,6 +10,7 @@ use App\Http\Controllers\ScheduleSearchController;
 use App\Http\Controllers\Main_userController;
 use App\Http\Controllers\Main_userSearchController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\SeparateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,8 @@ Route::resource('main_user', Main_userController::class);
 });
 
 Route::resource('document', DocumentController::class);
+
+Route::resource('separate', SeparateController::class);
 
 Route::get('/business_owner', function () {
     return view('business_owner');

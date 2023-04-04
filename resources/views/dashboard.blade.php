@@ -13,8 +13,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                 <a href="/business_owner">事業主はこちらへ</a>
-                            </div>
+                                 <x-nav-link :href="route('separate.index')" :active="request()->routeIs('separate.index')"> {{ __('協力企業はこちらへ') }} </x-nav-link>
                         </div>
                     </div>
                 </div>
@@ -22,12 +21,13 @@
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                 <a href="/cooperating_company">協力企業はこちらへ</a>
+                                <x-nav-link :href="route('separate.create')" :active="request()->routeIs('separate.create')">{{ __('事業主はこちらへ') }}</x-nav-link>
                             </div>
                         </div>
 
                     </div>
                 </div>
+                
      </div>
      
      
