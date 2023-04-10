@@ -37,7 +37,10 @@
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$result->overtime}}</td>
                      <!-- 削除ボタン -->
                      <td>
-                        <!-- 🔽 更新ボタン -->
+                        <div class="flex">
+                    <!-- 🔽 条件分岐でログインしているユーザが投稿したtweetのみ編集ボタンと削除ボタンが表示される -->
+                    @if ($result->user_id === Auth::user()->id)
+                    <!-- 更新ボタン -->
                     <form action="{{ route('result.edit',$result->id) }}" method="GET" class="text-left">
                       @csrf
                       <x-primary-button class="ml-3">
@@ -57,6 +60,8 @@
                         </svg>
                       </x-primary-button>
                     </form>
+                    @endif
+                  </div>
                     </td>
               　　　</tr>
                 </td>

@@ -35,6 +35,9 @@
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$schedule->contact}}</td>
                      <!-- 削除ボタン -->
                      <td>
+                       <div class="flex">
+                    <!-- 🔽 条件分岐でログインしているユーザが投稿したtweetのみ編集ボタンと削除ボタンが表示される -->
+                    @if ($schedule->user_id === Auth::user()->id)
                         <!-- 🔽 更新ボタン -->
                     <form action="{{ route('schedule.edit',$schedule->id) }}" method="GET" class="text-left">
                       @csrf
@@ -55,6 +58,8 @@
                         </svg>
                       </x-primary-button>
                     </form>
+                    @endif
+                  </div>
                     </td>
               　　　</tr>
                 </td>

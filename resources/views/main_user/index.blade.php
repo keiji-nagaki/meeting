@@ -26,6 +26,10 @@
                   <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">{{$main_user->contact_information}}</h3>
                   <div class="flex">
                     <!-- 更新ボタン -->
+                     <div class="flex">
+                    <!-- 🔽 条件分岐でログインしているユーザが投稿したtweetのみ編集ボタンと削除ボタンが表示される -->
+                    @if ($main_user->user_id === Auth::user()->id)
+                    <!-- 更新ボタン -->
                     <form action="{{ route('main_user.edit',$main_user->id) }}" method="GET" class="text-left">
                       @csrf
                       <x-primary-button class="ml-3">
@@ -34,7 +38,7 @@
                         </svg>
                       </x-primary-button>
                     </form>
-                    <!-- 削除ボタン -->
+                   
                     <form action="{{ route('main_user.destroy',$main_user->id) }}" method="POST" class="text-left">
                       @method('delete')
                       @csrf
@@ -44,6 +48,8 @@
                         </svg>
                       </x-primary-button>
                     </form>
+                    @endif
+                  </div>
                   </div>
                 </td>
               </tr>

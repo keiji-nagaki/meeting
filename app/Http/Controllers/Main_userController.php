@@ -113,7 +113,7 @@ class Main_userController extends Controller
       }
       //データ更新処理
       $result = Main_user::find($id)->update($request->all());
-      return redirect()->route('');
+      return redirect()->route('dashboard');
     }
 
     /**
