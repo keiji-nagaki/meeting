@@ -63,7 +63,7 @@ class Main_userController extends Controller
         $result = Main_user::create($data);
     
         // tweet.index」にリクエスト送信（一覧ページに移動）
-        return redirect()->route('dashboard');
+        return redirect()->route('separate.create');
 
     }
 

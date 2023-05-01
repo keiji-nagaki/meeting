@@ -66,7 +66,7 @@ class ScheduleController extends Controller
           $data = $request->merge(['user_id' => Auth::user()->id])->all();
           $result = Schedule::create($data);
           // ルーティング「tweet.index」にリクエスト送信（一覧ページに移動）
-          return redirect()->route('schedule.index');
+          return redirect()->route('separate.index');
   
   }
     

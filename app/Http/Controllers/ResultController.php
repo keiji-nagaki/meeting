@@ -68,7 +68,7 @@ class ResultController extends Controller
     $result = Result::create($data);
 
     // tweet.index」にリクエスト送信（一覧ページに移動）
-    return redirect()->route('dashboard');
+    return redirect()->route('separate.index');
   }
 
 
