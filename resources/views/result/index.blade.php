@@ -17,8 +17,8 @@
               <tr>
                 <th class="py-4 px-6 bg-gray-lightest dark:bg-gray-darkest font-bold uppercase text-lg text-gray-dark dark:text-gray-200 border-b border-grey-light dark:border-grey-dark">予定表</th>
                  <tr class="hover:bg-gray-lighter">   
+                 　　　<td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">日付</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">企業名</td>
-                     <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">日付</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">件名</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">実績</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">作業員数</td>
@@ -29,8 +29,8 @@
               @foreach ($results as $result)
 
               　　　<tr class="hover:bg-gray-lighter">
-              　　　  <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$result->user->name}}</td>
-                     <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$result->date}}</td>
+              　　     <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$result->date}}</td>
+              　　　　　  <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$result->user->name}}</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$result->subject}}</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$result->result}}</td>
                      <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">{{$result->number_of_people}}</td>

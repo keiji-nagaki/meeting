@@ -26,7 +26,7 @@
             </div>
             <div class="flex flex-col mb-4">
               <x-input-label for="result" :value="__('工事実績')" />
-              <x-text-input id="result" class="block mt-1 w-full" type="text" name="result" :value="old('result')" required autofocus />
+              <textarea id="result" class="block mt-1 w-full" name="result" required autofocus>{{ old('result') }}</textarea>
               <x-input-error :messages="$errors->get('result')" class="mt-2" />
             </div>
             <div class="flex flex-col mb-4">
